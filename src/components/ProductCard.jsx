@@ -13,8 +13,8 @@ export default function ProductCard({ title, price, onAddToCart }) {
           But right now, clicking does absolutely nothing.
       */}
       <button 
-        className="mt-4 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition active:scale-95 font-semibold"
         onClick={onAddToCart} // FIX: Added the onClick handler
+        className="mt-4 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition active:scale-95 font-semibold"
       >
         Add to Cart
       </button>

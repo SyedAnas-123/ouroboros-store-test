@@ -14,6 +14,7 @@ export default function ProductCard({ title, price, onAddToCart }) {
       */}
       <button 
         className="mt-4 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition active:scale-95 font-semibold"
+        onClick={onAddToCart} // FIX: Added the missing onClick handler
       >
         Add to Cart
       </button>

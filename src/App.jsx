@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ProductCard from './components/ProductCard';
 import ContactForm from './components/ContactForm';
+import BlackBoxRecorder from './components/BlackBoxRecorder';
 
 export default function App() {
   // We added state to track the cart number
@@ -26,6 +27,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans text-slate-800">
+      <BlackBoxRecorder />
       
       {/* Pass the count to the header so we can see it */}
       <Header cartCount={cartCount} />

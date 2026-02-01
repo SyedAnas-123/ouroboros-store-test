@@ -6,15 +6,15 @@ import ContactForm from './components/ContactForm';
 import BlackBoxRecorder from './components/BlackBoxRecorder';
 
 export default function App() {
-  // We added state to track the cart number
+
   const [cartCount, setCartCount] = useState(0);
 
-  // This function works perfectly... if it ever gets called!
+
   const handleAddToCart = () => {
     setClickCount(prev => prev + 1); // logic is ready
   };
   
-  // FIX: We need a wrapper to actually update the state
+
   const incrementCart = () => {
     setCartCount(prev => prev + 1);
   };
@@ -42,14 +42,14 @@ export default function App() {
                 key={product.id} 
                 title={product.title} 
                 price={product.price}
-                // We pass the function down, BUT the ProductCard will ignore it (The Bug)
+              
                 onAddToCart={incrementCart} 
               />
             ))}
           </div>
         </section>
 
-        {/* The Form is now fixed so it won't distract the agent */}
+
         <ContactForm />
         
       </main>

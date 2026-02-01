@@ -12,10 +12,10 @@ const BlackBoxRecorder = () => {
         video: { mediaSource: "screen" }
       });
       
-      // [FIX] Use specific MIME type for better compatibility
+
       const options = { mimeType: 'video/webm;codecs=vp8' };
       
-      // Fallback if browser doesn't support vp8 directly
+
       if (!MediaRecorder.isTypeSupported(options.mimeType)) {
         console.warn("VP8 not supported, falling back to default webm");
         mediaRecorderRef.current = new MediaRecorder(stream);
@@ -57,13 +57,13 @@ const BlackBoxRecorder = () => {
   const stopAndUpload = () => {
     if (!mediaRecorderRef.current) return;
 
-    // [FIX] Wait small delay to ensure last chunk is captured
+
     setTimeout(() => {
         mediaRecorderRef.current.stop();
     }, 500);
     
     mediaRecorderRef.current.onstop = async () => {
-      // [FIX] Ensure we actually have data
+
       if (chunksRef.current.length === 0) {
           console.error("No video chunks recorded!");
           return;
